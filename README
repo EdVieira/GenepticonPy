@@ -1,0 +1,49 @@
+GenepticonPy - Genetic Algorithm and Perceptrons using Python
+
+Copyright © 2016 Eduardo Henrique Vieira dos Santos
+
+GenepticonPy was developed using Python 2.7.
+
+The first idea to make it was a trying to clarify and unify understandings about 
+functional concepts like Artificial Neural Network and Genetic Algorithm.
+
+It was hard for me to find reasonable understandable examples and put its content in 
+pratice, so I'm releasing this architeture kind hoping to help you understand part of 
+its concepts and operations, or even use it in your projects.
+
+There are some example files, such as: all logical operations (and, or, xor, nand, nor, 
+xnor) manually configured to test the network features, an example of a learning script 
+using the class neural, and examples of saving and loading networks.
+
+This Network architeture uses the idea that Neurons belongs to a Dendrite coated by 
+a Layer inside its Network.
+
+Network tends to content a set of Layers that it will work with.
+
+Layer tends to be: Input Layer, Hidden Layer or Output Layer.
+A Layer may have one or more Dendrites within.
+The Layers communications is intermediate by its Network.
+
+Dendrite tends to be a set of Neurons.
+A Dendrite may have one or more Neurons within.
+The communications between Dendrites is intermediated by its Layer.
+
+The communications between Neurons in different Dendrites is intermediated by its 
+Dendrite.
+The traditional way to make it tends to sum inside the Neuron object the Activation 
+input values of all the Neurons in the past Layer. GenepticonPy do this sum in the 
+Dendrite and Injects it into the Neurons, avoiding the redundancy of making the same 
+sum in different Neurons.
+
+The examples are in the folder "tests/". The simulations of the truth table with 
+logical operations over the Network are in the folder "tests/Network". The example 
+of a script used for the Network learning using Genetic Algorithm is in the folder 
+"tests/Neural" and the examples of how to save and load your Networks are in "tests/Save-Load".
+
+Its precision still needs to be improved for most accurated results on its training.
+
+Author: Eduardo Henrique Vieira dos Santos
+GitHub: https://github.com/EdVieira
+LinkedIn: https://www.linkedin.com/in/eduardo-henrique-a29b30114
+Facebook: http://facebook.com/edu.0439
+E-mail: edu.0439@facebook.com
