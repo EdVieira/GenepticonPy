@@ -7,8 +7,7 @@ GenepticonPy was developed using Python 2.7.
 The first idea to make it was a trying to clarify and unify understandings about 
 functional concepts like Artificial Neural Network and Genetic Algorithm.
 
-It was hard for me to find reasonable understandable examples and put its content in 
-pratice, so I'm releasing this architeture kind hoping to help you understand part of 
+I'm releasing this architeture kind hoping to help you understand part of 
 its concepts and operations, or even use it in your projects.
 
 There are some example files, such as: all logical operations (and, or, xor, nand, nor, 
