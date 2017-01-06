@@ -378,34 +378,4 @@ print net.activate([0,0])
 #print net.activate([1])
 #______________________________________________________
 
-
-O \textit{script} contendo o seguinte código foi executado:\\\\
-x1 = Neuron()	\#Neurônio de entrada\\
-x2 = Neuron()	\#Neurônio de entrada\\
-%
-%Instância dos neurônios da camada de saída:\\
-y1 = Neuron() 	\#Saída para \textit{AND}\\
-y2 = Neuron()	\#Saída para \textit{OR}\\
-%
-%Conecta-se cada neurônio de uma camada a cada neurônio da próxima passando os parametros: neurônio a ser conectado; polarização da conexão; seu peso.\\
-x1.addConnection(y1, 0, 0.5)	\#Conexão entre $x1$ e $y1$\\
-x2.addConnection(y1, 0, 0.5)	\#Conexão entre $x2$ e $y1$\\
-x1.addConnection(y2, 0, 0.6)	\#Conexão entre $x1$ e $y2$\\
-x2.addConnection(y2, 0, 0.6)	\#Conexão entre $x2$ e $y2$\\
-%
-%Instâncias das camadas recebendo a lista de neurônios que as compõem:\\
-layer1 = Dendrite([x1,x2])	\#Instância da camada de entrada\\
-layer2 = Dendrite([y1,y2])	\#Instância da camada de saída\\
-%
-%Instancia da rede recebendo a lista de suas camadas ordenadas:\\
-net = Network([layer1,layer2])	\#Instância da rede\\
-%
-%Limpam-se os valores de entradas e saídas dos componentes:\\
-net.clearIO()	\#Limpeza dos valores de entradas e saídas dos componentes\\
-%
-%Ativa-se a rede imprimindo seus valores de retorno:\\
-print net.activate([1,1])	\#Imprimir o retorno da ativação para a lista no escopo\\
-print net.activate([0,1])	\#Imprimir o retorno da ativação para a lista no escopo\\
-print net.activate([1,0])	\#Imprimir o retorno da ativação para a lista no escopo\\
-print net.activate([0,0])	\#Imprimir o retorno da ativação para a lista no escopo\\
 """
