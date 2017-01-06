@@ -28,5 +28,5 @@ https://en.wikipedia.org/wiki/Feedforward_neural_network
 https://en.wikipedia.org/wiki/Multilayer_perceptron
 
 The library includes some required classes to work with its artificial neural network 
-architeture, such as: network, layer, dendrites, neuron and neural(class that implements 
+architeture, such as: Network, Dendrite, AxonTerminal, Neuron and Gen (class that implements 
 the training based on genetic algorithm).
