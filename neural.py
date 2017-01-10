@@ -47,8 +47,8 @@ class Neuron:
 		self.input.append(i)
 
 	def activate(self):
-		junc = 1 / ( 1 + 10**( -1 * math.e * ( sum(self.input) * 2-1) ) )
-		self.output = 1 / ( 1 + 10**( self.bend * math.e * ( junc * 2-1) ) )
+		comb = 1 / ( 1 + 10**( -1 * math.e * ( sum(self.input) * 2-1) ) )
+		self.output = 1 / ( 1 + 10**( self.bend * math.e * ( comb * 2-1) ) )
 		return self.output
 
 	def addConnection(self, target, bend = 0, weight = 1):
