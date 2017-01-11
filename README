@@ -23,8 +23,10 @@ The communication between Neurons in different layers is intermediated by its
 AxonTerminals.
 
 The implemented genetic algorithm focus on the better individuals of each population.
-It uses sexual reproduction between the better ones, crossing over its attributes and apllying random mutation.
-The evolutionary cicle goes until the better individual reach a rank under the ideal fitness value.
+It uses sexual reproduction between the better ones, crossing over its attributes and 
+apllying random mutation.
+The evolutionary cicle goes until the better individual reach a rank under the ideal 
+fitness value.
 At each iteration it saves the better individual in case the loop is interrupted.
 
 Author: Eduardo Henrique Vieira dos Santos
