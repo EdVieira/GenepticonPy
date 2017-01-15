@@ -37,8 +37,8 @@ class Gen:
 		self.heightHiddenLayer = hHi 	#qtty of neurons in each hidden layer
 		self.heightOutputLayer = hOu 	#qtty of neurons in the output layer
 
-		self.deservedInputs = []	#float list of inputs evaluated between 0 and 1
-		self.deservedOutputs = []	#float list of its corresponding outputs evaluated between 0 and 1
+		self.desiredInputs = []	#float list of inputs evaluated between 0 and 1
+		self.desiredOutputs = []	#float list of its corresponding outputs evaluated between 0 and 1
 		self.idealFitness = 0.001	#accetable miss, usually 1%
 		self.mutationRate = 0.5	#mutation rate
 		self.crossoverRate = 0.5
@@ -110,22 +110,22 @@ class Gen:
 		return net
 
 	def rank(self, net):
-		#Calculates the deviation between the Network Activation Outputs for each Deserved Input to each Deserved Output
+		#Calculates the deviation between the Network Activation Outputs for each Desired Input to each Desired Output
 		deviationSum = 0
-		#Tests each Deserved Inputs for each Deserved Output
-		for i in range(len(self.deservedInputs)):
-			#Activates the Network with the deserved input
-			z = net.activate(self.deservedInputs[i])
+		#Tests each Desired Inputs for each Desired Output
+		for i in range(len(self.desiredInputs)):
+			#Activates the Network with the Desired input
+			z = net.activate(self.desiredInputs[i])
 			#Compare each output...
 			for j in range(len(z)):
 				major = z[j]
-				minor = float(self.deservedOutputs[i][j])
-				#Compare the distance between the Network Outputs to the Deserved Outputs
+				minor = float(self.desiredOutputs[i][j])
+				#Compare the distance between the Network Outputs to the Desired Outputs
 				distance = abs(major - minor)
 				distance = distance**2
 				if distance > self.idealFitness:
 					#punishment if goal is not achieved
-					distance = distance*1000*(len(self.deservedOutputs))#(len(self.deservedOutputs)*(math.sqrt(distance)) + 2) *( distance + len(self.deservedOutputs)*(math.sqrt(distance)*(math.e/2)))#(len(self.deservedOutputs)) + math.sqrt(distance)*(len(self.deservedOutputs))#
+					distance = distance*1000*(len(self.desiredOutputs))#(len(self.desiredOutputs)*(math.sqrt(distance)) + 2) *( distance + len(self.desiredOutputs)*(math.sqrt(distance)*(math.e/2)))#(len(self.desiredOutputs)) + math.sqrt(distance)*(len(self.desiredOutputs))#
 				deviationSum = deviationSum + distance
 		return deviationSum
 
@@ -213,18 +213,18 @@ class Gen:
 
 			print "||||||||||Parent2|||||||||"
 
-			for i in range(len(self.deservedInputs)):
-				z = self.parent2.activate(self.deservedInputs[i])
-				print "Activation:\t",self.deservedInputs[i],"=",z
-				print "Deserved:\t",self.deservedInputs[i],"=",self.deservedOutputs[i]
+			for i in range(len(self.desiredInputs)):
+				z = self.parent2.activate(self.desiredInputs[i])
+				print "Activation:\t",self.desiredInputs[i],"=",z
+				print "Desired:\t",self.desiredInputs[i],"=",self.desiredOutputs[i]
 
 			print "||||||||||Parent1|||||||||"
 
-			#Displays each deserved Inputs and its Outputs of the parents Network
-			for i in range(len(self.deservedInputs)):
-				z = self.parent1.activate(self.deservedInputs[i])
-				print "Activation:\t",self.deservedInputs[i],"=",z
-				print "Deserved:\t",self.deservedInputs[i],"=",self.deservedOutputs[i]
+			#Displays each desired Inputs and its Outputs of the parents Network
+			for i in range(len(self.desiredInputs)):
+				z = self.parent1.activate(self.desiredInputs[i])
+				print "Activation:\t",self.desiredInputs[i],"=",z
+				print "Desired:\t",self.desiredInputs[i],"=",self.desiredOutputs[i]
 
 			#Loading bar...
 			print "Loading","."*(lifetimeCounter%30)
@@ -263,6 +263,6 @@ def load(name):
 #Uncomment these lines to test a XOR and NXOR learning
 #gen = Gen("XORXNOR", 2, 3, 2, 2)
 #gen.populationSize = 50
-#gen.deservedInputs = [[1,1],[1,0],[0,1],[0,0]]
-#gen.deservedOutputs = [[0,1],[1,0],[1,0],[0,1]]
+#gen.desiredInputs = [[1,1],[1,0],[0,1],[0,0]]
+#gen.desiredOutputs = [[0,1],[1,0],[1,0],[0,1]]
 #gen.evolve()
