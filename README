@@ -8,20 +8,20 @@ The first idea to make it was a trying to clarify and unify understandings about
 functional concepts like Artificial Neural Network and Genetic Algorithm and its 
 methods.
 
-Network tends to content a set of layers that it will work with. In a MLP they are:
+Network tends to have a set of layers that it will work with. In a MLP they are:
 -An input layer;
 -One or more hidden layer; 
 -An output layer.
 
-Dendrite tends to be a set of Neurons, corresponding to the concept of layers.
+The class Dendrite tends to have a set of Neurons, corresponding to the concept of layers.
 A Dendrite may have one or more Neurons within.
-The activation of each Dendrite set is done by the Network.
+The activation of each Dendrite set is done by the class Network.
 
 The communication between Neurons in different layers is intermediated by its 
-AxonTerminals.
+AxonTerminals objects.
 
-The implemented genetic algorithm focus on the better individuals of each population.
-It uses sexual reproduction between the better ones, crossing over its attributes and 
+The genetic algorithm implemented focus on the better individuals of each population.
+It reproduces between the better ones, crossing over its attributes and 
 apllying random mutation.
 The evolutionary cicle goes until the better individual reach a rank under the ideal 
 fitness value.
